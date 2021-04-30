@@ -5,3 +5,17 @@
     font-family: "Alegreya Sans";
     font-weight: 500;
 }
+
+header.default nav.bg-transparent {
+    background-color: var.$primary_color !important;
+}
+
+header.default .navbar-light .navbar-brand,
+header.default .navbar-nav .nav-link {
+    color: white;
+}
+
+header.default .navbar-light .navbar-brand:hover,
+header.default .navbar-nav .nav-link:hover {
+    color: #d9d9d9;
+}
