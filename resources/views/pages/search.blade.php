@@ -36,49 +36,55 @@
                                         @php
                                             $authors = '';
                                             $author_counter = 0;
-                                            foreach($book['author_name'] as $author)
+                                            if(isset($book['author_name']))
                                             {
-                                                if($author_counter < sizeof($book['author_name']) - 1)
+                                                foreach($book['author_name'] as $author)
                                                 {
-                                                    $authors = $authors . $author . ', ';
+                                                    if($author_counter < sizeof($book['author_name']) - 1)
+                                                    {
+                                                        $authors = $authors . $author . ', ';
+                                                    }
+                                                    else
+                                                    {
+                                                        $authors = $authors . $author;
+                                                    }
+                                                    $author_counter++;
                                                 }
-                                                else
+                                                if(strlen($authors) > 50)
                                                 {
-                                                    $authors = $authors . $author;
+                                                    $authors = substr($authors, 0, 50);
+                                                    $authors = $authors . '...';
                                                 }
-                                                $author_counter++;
-                                            }
-                                            if(strlen($author) > 100)
-                                            {
-                                                $authors = substr($authors, 0, 100);
-                                                $authors = $authors . '...';
                                             }
                                         @endphp
-                                        {{ $authors }}
+                                        {{ $authors ? $authors : 'Unknown authors' }}
                                     </h6>
                                     <h6>
                                         @php
                                             $publishers = '';
                                             $publisher_counter = 0;
-                                            foreach($book['publisher'] as $publisher)
+                                            if(isset($book['publisher']))
                                             {
-                                                if($publisher_counter < sizeof($book['publisher']) - 1)
+                                                foreach($book['publisher'] as $publisher)
                                                 {
-                                                    $publishers = $publishers . $publisher . ', ';
+                                                    if($publisher_counter < sizeof($book['publisher']) - 1)
+                                                    {
+                                                        $publishers = $publishers . $publisher . ', ';
+                                                    }
+                                                    else
+                                                    {
+                                                        $publishers = $publishers . $publisher;
+                                                    }
+                                                    $publisher_counter++;
                                                 }
-                                                else
+                                                if(strlen($publishers) > 100)
                                                 {
-                                                    $publishers = $publishers . $publisher;
+                                                    $publishers = substr($publishers, 0, 100);
+                                                    $publishers = $publishers . '...';
                                                 }
-                                                $publisher_counter++;
-                                            }
-                                            if(strlen($publishers) > 100)
-                                            {
-                                                $publishers = substr($publishers, 0, 100);
-                                                $publishers = $publishers . '...';
                                             }
                                         @endphp
-                                        {{ $publishers }}
+                                        {{ $publishers ? $publisher : 'Unknown publisher' }}
                                     </h6>
                                 </div>
                             </div>
