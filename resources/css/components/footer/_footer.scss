@@ -1,0 +1,9 @@
+@use "../../helpers/variables" as var;
+
+footer {
+    background-color: #e5e5e5;
+}
+
+footer p {
+    color: var.$secondary_text;
+}
