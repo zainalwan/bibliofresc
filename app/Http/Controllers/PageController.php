@@ -24,4 +24,9 @@ class PageController extends Controller
         ];
         return view('pages.landing_page', $datas);
     }
+
+    public function about()
+    {
+        return view('pages.about', ['title' => 'About']);
+    }
 }
