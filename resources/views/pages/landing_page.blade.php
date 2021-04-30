@@ -40,7 +40,7 @@
                             @endphp
                             <div class="col-md-4 mb-4">
                                 <div class="card mx-auto">
-                                    <img src="{{ 'http://covers.openlibrary.org/b/id/' . $book['cover_i'] . '-L.jpg' }}" class="card-img-top" alt="...">
+                                    <img src="{{ 'http://covers.openlibrary.org/b/id/' . $book['cover_i'] . '-L.jpg' }}" class="card-img-top" alt="{{ $book['title'] }}">
                                     <div class="card-body">
                                         <h5 class="card-title"><a href="/details{{ $book['key'] }}">{{ $book['title'] }}</a></h5>
                                         <h6 class="card-subtitle">
