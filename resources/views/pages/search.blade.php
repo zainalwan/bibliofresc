@@ -4,7 +4,7 @@
     <div class="container container-min">
         <div class="row mt-5 mb-5">
             <div class="col-md-10 mx-auto">
-                <h2 class="mb-3">Search</h2>
+                <h2 class="mb-3">{{ $title }}</h2>
                 <form action="/search" method="get">
                     <div class="row">
                         <div class="col-4 pe-0">
@@ -31,7 +31,7 @@
                                     <img src="http://covers.openlibrary.org/b/id/{{ $book['cover_i'] }}-L.jpg" class="img-fluid" alt="{{ $book['title'] }}">
                                 </div>
                                 <div class="col">
-                                    <h4><a href="/details{{ $book['key'] }}">{{ $book['title'] }}</a></h4>
+                                    <h5><a href="/details{{ $book['key'] }}">{{ $book['title'] }}</a></h5>
                                     <h6>
                                         @php
                                             $authors = '';
