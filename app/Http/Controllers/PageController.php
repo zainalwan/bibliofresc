@@ -64,4 +64,27 @@ class PageController extends Controller
 
         return view('pages.search', $datas);
     }
+
+    public function show(Request $request, $type = null, $id = null)
+    {
+        $datas = [
+            'title' => 'Details',
+        ];
+
+        $books = $request->session()->get('books');
+        foreach($books as $book)
+        {
+            if($book['key'] == '/' . $type . '/' . $id)
+            {
+                $datas['book'] = $book;
+                break;
+            }
+        }
+        if(!isset($datas['book']))
+        {
+            abort(404);
+        }
+
+        return view('pages.details', $datas);
+    }
 }
