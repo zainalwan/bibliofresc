@@ -1,0 +1,7 @@
+@use "../../helpers/variables" as var;
+
+.navbar-light .navbar-brand {
+    color: var.$primary_text;
+    font-family: "Alegreya Sans";
+    font-weight: 500;
+}
