@@ -57,7 +57,7 @@
                                                 }
                                             }
                                         @endphp
-                                        {{ $authors ? $authors : 'Unknown authors' }}
+                                        {{ $authors ? $authors : 'Unknown author' }}
                                     </h6>
                                     <h6>
                                         @php
