@@ -42,8 +42,31 @@
                                 <div class="card mx-auto">
                                     <img src="{{ 'http://covers.openlibrary.org/b/id/' . $book['cover_i'] . '-L.jpg' }}" class="card-img-top" alt="...">
                                     <div class="card-body">
-                                        <h5 class="card-title"><a href="#">{{ $book['title'] }}</a></h5>
-                                        <h6 class="card-subtitle">{{ $book['author_name'][0] }}</h6>
+                                        <h5 class="card-title"><a href="/details{{ $book['key'] }}">{{ $book['title'] }}</a></h5>
+                                        <h6 class="card-subtitle">
+                                            @php
+                                                $authors = '';
+                                                $author_counter = 0;
+                                                foreach($book['author_name'] as $author)
+                                                {
+                                                    if($author_counter < sizeof($book['author_name']) - 1)
+                                                    {
+                                                        $authors = $authors . $author . ', ';
+                                                    }
+                                                    else
+                                                    {
+                                                        $authors = $authors . $author;
+                                                    }
+                                                    $author_counter++;
+                                                }
+                                                if(strlen($author) > 30)
+                                                {
+                                                    $authors = substr($authors, 0, 30);
+                                                    $authors = $authors . '...';
+                                                }
+                                            @endphp
+                                            {{ $authors }}
+                                        </h6>
                                     </div>
                                 </div>
                             </div>
