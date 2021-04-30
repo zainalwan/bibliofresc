@@ -1,0 +1,5 @@
+@use "../../helpers/variables" as var;
+
+.card-subtitle {
+    color: var.$secondary_text;
+}
