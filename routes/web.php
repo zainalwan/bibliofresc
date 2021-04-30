@@ -18,3 +18,4 @@ use App\Http\Controllers\PageController;
 Route::get('/', [PageController::class, 'index']);
 Route::get('/about', [PageController::class, 'about']);
 Route::get('/search', [PageController::class, 'search']);
+Route::get('/details/{type}/{id}', [PageController::class, 'show']);
