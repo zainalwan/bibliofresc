@@ -7,7 +7,7 @@ use Illuminate\Support\Arr;
 
 class PageController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $json_string = file_get_contents
             ('http://openlibrary.org/search.json?q=mathematics');
@@ -22,6 +22,7 @@ class PageController extends Controller
         $datas = [
             'books' => $books
         ];
+        $request->session()->put('books', $books);
         return view('pages.landing_page', $datas);
     }
 
