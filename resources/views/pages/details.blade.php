@@ -8,7 +8,7 @@
             </div>
         </div>
 
-        <div class="row mb-5 book-details">
+        <div class="row pb-5 book-details">
             <div class="col-md-10 mx-auto">
                 <div class="row">
                     <div class="col-md-4">

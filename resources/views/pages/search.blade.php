@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <div class="row search-result">
+        <div class="row pb-5 search-result">
             <div class="col-md-10 mx-auto">
                 @if(isset($books))
                     @if(sizeof($books) > 0)
